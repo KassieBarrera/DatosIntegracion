@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextFuncion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese la función (ej. x^2 + 2*x + 1)"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/inferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextFuncion"
+        android:hint="Límite Inferior"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/superior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inferior"
+        android:hint="Límite Superior"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/buttonCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/superior"
+        android:layout_marginTop="16dp"
+        android:text="Calcular Integral" />
+
+    <TextView
+        android:id="@+id/textViewResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonCalcular"
+        android:layout_marginTop="16dp"
+        android:text="Resultado: " />
+
+    <LinearLayout
+        android:id="@+id/chartLayout"
+        android:layout_below="@id/textViewResultado"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.kassie.calculo_proyecto.GraficaFuncion
+            android:id="@+id/graficoView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>
